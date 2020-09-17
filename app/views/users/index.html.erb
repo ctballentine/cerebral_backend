@@ -1,0 +1,14 @@
+<h1>User login</h1>
+<p>Find me in app/views/homepage/index.html.erb</p>
+
+<%= form_for :user do |f| %>
+name:
+<%= f.text_field :first_name %><br />
+  <%= f.submit %>
+<% end %>
+
+
+<%= link_to "make user", users_create_path %>
+<%= link_to "paid", users_edit_path %>
+<%= link_to "delete", users_destroy_path %>
+
