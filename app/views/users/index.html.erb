@@ -1,12 +1,9 @@
 <h1>User login</h1>
-<p>Find me in app/views/homepage/index.html.erb</p>
 
-<%= form_for :user do |f| %>
-name:
-<%= f.text_field :first_name %><br />
-  <%= f.submit %>
-<% end %>
+User Status:
+<%= User.last.status %>
 
+<br>
 
 <%= link_to "make user", users_create_path %>
 <%= link_to "paid", users_edit_path %>

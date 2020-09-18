@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
 
 
+
   end
 
   def index
@@ -17,12 +18,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user=User.find(params[:id])
+    @user=User.last
     @user.status = 'paid'
+    @user.save
+    redirect_to users_index_path
   end
 
   def destroy
-    @user=User.find(params[:id])
-    @user.satus = 'cancel'
+    @user=User.last
+    @user.status = 'cancel'
+    @user.save
+    redirect_to users_index_path
   end
 end
